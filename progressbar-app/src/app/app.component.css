@@ -1,0 +1,27 @@
+progress {
+  text-align: center;
+  height: 1.5em;
+  border: none;
+  
+  /* Set the progressbar to relative */
+  position:relative;
+}
+progress:before {
+  content: 'text';
+  font-size: 0.8em;
+  vertical-align: 0;
+  
+  /*Position text over the progress bar */
+  position:absolute;
+  left:0;
+  right:0;
+}
+progress::-webkit-progress-bar {
+  background-color: burlywood;
+}
+progress::-webkit-progress-value {
+  background-color: #7cc4ff;
+}
+progress::-moz-progress-bar {
+  background-color: #7cc4ff;
+}

@@ -1,0 +1,16 @@
+<h1>
+  {{dataresp.bars}} {{dataresp.limit}}
+</h1>
+
+<div style="width:500px;border:1pt" *ngFor="let bar of dataresp?.bars; let i = index">
+  <progress min="0" id="progress{{i+1}}" max="{{dataresp.limit}}" value="{{bar}}" ></progress><br/>
+  <div id="div{{i+1}}"style="text-align: center">{{bar}}</div>
+</div>
+
+<select #selectedprog [(ngModel)]="selected">
+  <option *ngFor="let bar of dataresp?.bars; let i = index" value="progress{{i+1}}">progress{{i+1}}</option>
+</select> 
+<span *ngFor="let button of dataresp?.buttons">
+  <button  value="{{button}}" (click)="adjust(button,selectedprog.value);">{{button}}</button>
+  
+</span>
